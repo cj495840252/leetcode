@@ -32,7 +32,7 @@ class Solution:
 
     def findDisappearedNumbers2(self, nums: list[int]) -> list[int]:
         """
-        3.
+        3.思想：数值和下表之间的联系
         """
         res = []
         for i, value in enumerate(nums):
