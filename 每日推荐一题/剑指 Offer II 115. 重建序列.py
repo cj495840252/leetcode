@@ -84,9 +84,3 @@ if __name__ == '__main__':
     s = Solution()
     res = s.sequenceReconstruction(nums, sequences)
     print(res)
-
-
-    # for i,j in pairwise([1,2,3,4,5,6]):
-    #     print(i,j)
-
-    # print(pairwise([1,2,3,4,5]))
