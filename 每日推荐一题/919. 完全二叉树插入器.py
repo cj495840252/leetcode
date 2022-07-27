@@ -11,7 +11,7 @@ CBTInserter.insert(int v)  向树中插入一个值为 Node.val == val的新节�
 CBTInserter.get_root() 将返回树的头节点。
 """
 
-from DateType.ClassTreeNode import TreeNode, create, BFS_print
+from DataType.ClassTreeNode import TreeNode, create, BFS_print
 from collections import deque
 
 

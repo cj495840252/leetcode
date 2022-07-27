@@ -78,7 +78,6 @@ class Solution:
         return bits
 
 
-
 if __name__ == '__main__':
     s = Solution()
     res = s.countBits3(5)
