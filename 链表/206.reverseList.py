@@ -50,7 +50,6 @@ class Solution:
         return new_head
 
 
-
 if __name__ == '__main__':
     res = ListNode.createLink([1, 2, 3, 4, 5])
     ListNode.printLink(res)
