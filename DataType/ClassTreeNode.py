@@ -23,7 +23,7 @@ def create(value_list: list):
             q.append(p.left)
             q.append(p.right)
         if not p.left:
-            new_node = TreeNode(value_list[i])
+            new_node = TreeNode(value_list[i]) if value_list[i] is not None else None
             i += 1
             p.left = new_node
             q.append(new_node)
@@ -48,9 +48,9 @@ def BFS_print(root, end="   "):
             q.append(p.left)
         if p.right:
             q.append(p.right)
-
+    print()
 
 if __name__ == '__main__':
-    root = create([1,3,9,10, 4])
+    root = create([2, 1, 3, None, 4, None, 7])
 
     BFS_print(root)
