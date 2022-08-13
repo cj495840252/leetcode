@@ -9,14 +9,14 @@ class TreeNode:
         self.right = right
 
 
-# 构造二叉树
-def create(value_list: list):
+# 插入
+def insert(value_list: list, root):
     if not value_list:
         return
-    head = TreeNode(value_list[0])
+    head = root  # TreeNode(value_list[0])
     q = deque()
     q.append(head)
-    i = 1
+    i = 0
     while q and i < len(value_list):
         p = q.popleft()
         if p.right and p.left:
@@ -30,12 +30,32 @@ def create(value_list: list):
             if i == len(value_list):
                 break
         if not p.right:
-            new_node = TreeNode(value_list[i])
+            new_node = TreeNode(value_list[i]) if value_list[i] is not None else None
             i += 1
             p.right = new_node
             q.append(new_node)
     return head
 
+# 构造二叉树
+def create(List: list):
+    head = TreeNode(List[0])
+    q = deque([head])
+    i = 1
+    while q and i < len(List):
+        p = q.popleft()
+        if List[i] is not None:
+            new = TreeNode(List[i])
+            p.left = new
+            q.append(p.left)
+        i += 1
+        if i == len(List):
+            break
+        if List[i] is not None:
+            new = TreeNode(List[i])
+            p.right = new
+            q.append(p.right)
+        i += 1
+    return head
 
 # 遍历二叉树：广度优先
 def BFS_print(root, end="   "):
@@ -43,14 +63,22 @@ def BFS_print(root, end="   "):
     q.append(root)
     while q:
         p = q.popleft()
-        print(p.val, end=end)
-        if p.left:
+        if not p:
+            value = 'None'
+        else:
+            value = p.val
             q.append(p.left)
-        if p.right:
             q.append(p.right)
+        print(value, end=end)
+
+        # if p.left:
+        #     q.append(p.left)
+        # if p.right:
+        #     q.append(p.right)
     print()
 
 if __name__ == '__main__':
     root = create([2, 1, 3, None, 4, None, 7])
-
     BFS_print(root)
+    root1 = insert([2, 1], root)
+    BFS_print(root1)

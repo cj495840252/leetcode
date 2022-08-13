@@ -84,3 +84,4 @@ if __name__ == '__main__':
     s = Solution()
     res = s.sequenceReconstruction(nums, sequences)
     print(res)
+
