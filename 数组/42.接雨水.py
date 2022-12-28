@@ -75,5 +75,6 @@ class Solution:
 if __name__ == '__main__':
     # height = [4,2,0,3,2,5]
     height = [0,1,0,2,1,0,1,3,2,1,2,1]
-    s = Solution().trap2(height)
-    print(s)
+    print(height[0:1])
+    # s = Solution().trap2(height)
+    # print(s)
